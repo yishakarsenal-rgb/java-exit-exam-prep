@@ -64,7 +64,7 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
 
   return (
     <div className="h-full overflow-y-auto px-6 py-8">
-      {/* Header */}
+      {/* header */}
       <div className="mb-8">
         <p className="text-xs text-blue-400/70 font-mono tracking-widest uppercase mb-2">
           AOOP EXAM PREP
@@ -79,7 +79,7 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
         </p>
       </div>
 
-      {/* Stats row */}
+      {/* stats row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
         {stats.map((stat) => (
           <div
@@ -104,7 +104,7 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
         ))}
       </div>
 
-      {/* Quick Actions */}
+      {/* quick actions */}
       <div className="grid grid-cols-1 gap-4 mb-8">
         <button
           onClick={() => onNavigate("exam")}
@@ -131,7 +131,7 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
         </button>
       </div>
 
-      {/* Chapter Grid */}
+      {/* chapter grid */}
       <div className="mb-4 flex items-center gap-2">
         <h2 className="text-white/80 font-semibold text-sm uppercase tracking-wider">
           Chapter Index
@@ -175,7 +175,7 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
         ))}
       </div>
 
-      {/* Footer */}
+      {/* footer */}
       <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-white/20 text-xs">
         <div className="flex items-center gap-2">
           <CheckCircle2 size={12} />
