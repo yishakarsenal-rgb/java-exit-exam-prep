@@ -1,12 +1,12 @@
-'use client'
+"use client";
 
-import { ALL_QUESTIONS, CHAPTERS } from '@/lib/exam-questions'
-import { chapters } from '@/lib/chapters'
-import { cn } from '@/lib/utils'
-import { BookOpen, ChevronRight, Code2, Lightbulb, Zap } from 'lucide-react'
-import { useState } from 'react'
+import { ALL_QUESTIONS, CHAPTERS } from "@/lib/exam-questions";
+import { chapters } from "@/lib/chapters";
+import { cn } from "@/lib/utils";
+import { BookOpen, ChevronRight, Code2, Lightbulb, Zap } from "lucide-react";
+import { useState } from "react";
 
-// ── Syntax-highlighted code block ──────────────────────────────────────────────
+// syntax highlighted code block
 function CodeBlock({ code, title }: { code: string; title?: string }) {
   const highlighted = code
     .replace(
@@ -21,7 +21,7 @@ function CodeBlock({ code, title }: { code: string; title?: string }) {
     .replace(/(\/\/[^\n]*)/g, '<span class="cmt">$1</span>')
     .replace(/(\/\*[\s\S]*?\*\/)/g, '<span class="cmt">$1</span>')
     .replace(/\b(\d+\.?\d*[LlFfDd]?)\b/g, '<span class="num">$1</span>')
-    .replace(/(@\w+)/g, '<span class="ann">$1</span>')
+    .replace(/(@\w+)/g, '<span class="ann">$1</span>');
 
   return (
     <div className="rounded-xl overflow-hidden border border-blue-500/15">
@@ -43,28 +43,38 @@ function CodeBlock({ code, title }: { code: string; title?: string }) {
         />
       </div>
     </div>
-  )
+  );
 }
 
-// ── Mini practice question card ────────────────────────────────────────────────
+// mini practice question card
 function MiniQuestion({ question, color }: { question: any; color: string }) {
-  const [revealed, setRevealed] = useState(false)
-  const [selected, setSelected] = useState<number | null>(null)
+  const [revealed, setRevealed] = useState(false);
+  const [selected, setSelected] = useState<number | null>(null);
 
   const colorGlow: Record<string, string> = {
-    blue: 'text-blue-400', violet: 'text-violet-400', cyan: 'text-cyan-400', green: 'text-green-400',
-  }
+    blue: "text-blue-400",
+    violet: "text-violet-400",
+    cyan: "text-cyan-400",
+    green: "text-green-400",
+  };
   const diffColor: Record<string, string> = {
-    easy:   'text-green-400 bg-green-400/10 border-green-400/20',
-    medium: 'text-yellow-400 bg-yellow-400/10 border-yellow-400/20',
-    hard:   'text-red-400 bg-red-400/10 border-red-400/20',
-  }
+    easy: "text-green-400 bg-green-400/10 border-green-400/20",
+    medium: "text-yellow-400 bg-yellow-400/10 border-yellow-400/20",
+    hard: "text-red-400 bg-red-400/10 border-red-400/20",
+  };
 
   return (
     <div className="glass border border-white/8 rounded-xl p-4">
       <div className="flex items-start justify-between gap-3 mb-3">
-        <p className="text-white/80 text-sm leading-relaxed">{question.question}</p>
-        <span className={cn('flex-shrink-0 text-[10px] border rounded px-1.5 py-0.5 font-mono', diffColor[question.difficulty] ?? diffColor.medium)}>
+        <p className="text-white/80 text-sm leading-relaxed">
+          {question.question}
+        </p>
+        <span
+          className={cn(
+            "flex-shrink-0 text-[10px] border rounded px-1.5 py-0.5 font-mono",
+            diffColor[question.difficulty] ?? diffColor.medium,
+          )}
+        >
           {question.difficulty}
         </span>
       </div>
@@ -77,84 +87,115 @@ function MiniQuestion({ question, color }: { question: any; color: string }) {
         {question.options.map((opt: string, i: number) => (
           <button
             key={i}
-            onClick={() => { setSelected(i); setRevealed(true) }}
+            onClick={() => {
+              setSelected(i);
+              setRevealed(true);
+            }}
             disabled={revealed}
             className={cn(
-              'text-left px-3 py-2 rounded-lg text-xs transition-all border',
+              "text-left px-3 py-2 rounded-lg text-xs transition-all border",
               !revealed
-                ? 'border-white/10 text-white/55 hover:border-white/20 hover:text-white/75'
+                ? "border-white/10 text-white/55 hover:border-white/20 hover:text-white/75"
                 : i === question.answer
-                ? 'border-green-500/40 bg-green-500/10 text-green-300'
-                : i === selected && i !== question.answer
-                ? 'border-red-500/40 bg-red-500/10 text-red-300'
-                : 'border-white/5 text-white/25 opacity-50',
+                  ? "border-green-500/40 bg-green-500/10 text-green-300"
+                  : i === selected && i !== question.answer
+                    ? "border-red-500/40 bg-red-500/10 text-red-300"
+                    : "border-white/5 text-white/25 opacity-50",
             )}
           >
-            <span className="font-mono opacity-50 mr-1">{String.fromCharCode(65 + i)}.</span>
+            <span className="font-mono opacity-50 mr-1">
+              {String.fromCharCode(65 + i)}.
+            </span>
             {opt}
           </button>
         ))}
       </div>
       {revealed && (
         <div className="text-xs text-white/45 bg-white/3 rounded-lg p-3 leading-relaxed border border-white/5">
-          <span className={cn('font-semibold', colorGlow[color])}>Explanation: </span>
+          <span className={cn("font-semibold", colorGlow[color])}>
+            Explanation:{" "}
+          </span>
           {question.explanation}
         </div>
       )}
     </div>
-  )
+  );
 }
 
-// ── Main ChapterView ───────────────────────────────────────────────────────────
+// main chapter view
 interface ChapterViewProps {
-  chapterId: string
-  onNavigate: (section: string) => void
+  chapterId: string;
+  onNavigate: (section: string) => void;
 }
 
-export default function ChapterView({ chapterId, onNavigate }: ChapterViewProps) {
-  const chapter = CHAPTERS.find((c) => c.id === chapterId)
-  // Also look in rich chapters data (lib/chapters.ts) for topic content
-  const richChapter = chapters.find((c) => c.id === chapterId)
-  const questions = ALL_QUESTIONS.filter((q) => q.chapter === chapterId)
-  const [activeTopicIdx, setActiveTopicIdx] = useState(0)
+export default function ChapterView({
+  chapterId,
+  onNavigate,
+}: ChapterViewProps) {
+  const chapter = CHAPTERS.find((c) => c.id === chapterId);
+  const richChapter = chapters.find((c) => c.id === chapterId);
+  const questions = ALL_QUESTIONS.filter((q) => q.chapter === chapterId);
+  const [activeTopicIdx, setActiveTopicIdx] = useState(0);
 
   const COLOR_MAP: Record<string, string> = {
-    ch1: 'blue', ch2: 'cyan', ch3: 'violet', ch4: 'green',
-    ch5: 'blue', ch6: 'cyan', ch7: 'blue',
-    jdbc: 'violet', javafx: 'cyan', network: 'green', applets: 'blue', servlets: 'violet',
-  }
-  const color = chapter?.color?.replace('neon-text-', '') ?? COLOR_MAP[chapterId] ?? 'blue'
+    ch1: "blue",
+    ch2: "cyan",
+    ch3: "violet",
+    ch4: "green",
+    ch5: "blue",
+    ch6: "cyan",
+    ch7: "blue",
+    jdbc: "violet",
+    javafx: "cyan",
+    network: "green",
+    applets: "blue",
+    servlets: "violet",
+  };
+  const color =
+    chapter?.color?.replace("neon-text-", "") ?? COLOR_MAP[chapterId] ?? "blue";
 
   const colorGlow: Record<string, string> = {
-    blue: 'text-blue-400', violet: 'text-violet-400', cyan: 'text-cyan-400', green: 'text-green-400',
-  }
+    blue: "text-blue-400",
+    violet: "text-violet-400",
+    cyan: "text-cyan-400",
+    green: "text-green-400",
+  };
   const colorBorder: Record<string, string> = {
-    blue: 'border-blue-500/20', violet: 'border-violet-500/20', cyan: 'border-cyan-500/20', green: 'border-green-500/20',
-  }
+    blue: "border-blue-500/20",
+    violet: "border-violet-500/20",
+    cyan: "border-cyan-500/20",
+    green: "border-green-500/20",
+  };
   const colorBg: Record<string, string> = {
-    blue: 'bg-blue-500/10', violet: 'bg-violet-500/10', cyan: 'bg-cyan-500/10', green: 'bg-green-500/10',
-  }
+    blue: "bg-blue-500/10",
+    violet: "bg-violet-500/10",
+    cyan: "bg-cyan-500/10",
+    green: "bg-green-500/10",
+  };
 
-  const topics = richChapter?.topics ?? []
-  const activeTopic = topics[activeTopicIdx]
+  const topics = richChapter?.topics ?? [];
+  const activeTopic = topics[activeTopicIdx];
 
-  const title = chapter?.title ?? richChapter?.title ?? chapterId
-  const subtitle = chapter?.subtitle ?? richChapter?.subtitle ?? ''
+  const title = chapter?.title ?? richChapter?.title ?? chapterId;
+  const subtitle = chapter?.subtitle ?? richChapter?.subtitle ?? "";
 
   if (!chapter && !richChapter) {
     return (
       <div className="h-full flex items-center justify-center text-white/30 text-sm">
         Chapter not found.
       </div>
-    )
+    );
   }
 
   return (
     <div className="h-full flex flex-col overflow-hidden">
-      {/* Chapter header */}
+      {/* chapter header */}
       <div className="px-6 pt-6 pb-4 border-b border-white/8 flex-shrink-0">
         <nav className="flex items-center gap-2 text-white/30 text-xs mb-3">
-          <button onClick={() => onNavigate('dashboard')} className="hover:text-white/60 transition-colors">
+          <button
+            onClick={() => onNavigate("dashboard")}
+            className="hover:text-white/60 transition-colors"
+          >
             Home
           </button>
           <ChevronRight size={12} />
@@ -165,7 +206,14 @@ export default function ChapterView({ chapterId, onNavigate }: ChapterViewProps)
         <p className="text-white/40 text-sm mt-1">{subtitle}</p>
 
         <div className="flex flex-wrap gap-2 mt-4">
-          <span className={cn('text-xs px-2.5 py-1 rounded-full border', colorBg[color], colorBorder[color], colorGlow[color])}>
+          <span
+            className={cn(
+              "text-xs px-2.5 py-1 rounded-full border",
+              colorBg[color],
+              colorBorder[color],
+              colorGlow[color],
+            )}
+          >
             {questions.length} practice questions
           </span>
           {topics.length > 0 && (
@@ -176,21 +224,21 @@ export default function ChapterView({ chapterId, onNavigate }: ChapterViewProps)
         </div>
       </div>
 
-      {/* Body */}
+      {/* body */}
       <div className="flex-1 overflow-hidden flex">
         {topics.length > 0 ? (
           <>
-            {/* Topic sidebar */}
+            {/* topic sidebar */}
             <div className="w-44 flex-shrink-0 border-r border-white/8 py-4 px-2 space-y-0.5 overflow-y-auto">
               {topics.map((topic, idx) => (
                 <button
                   key={idx}
                   onClick={() => setActiveTopicIdx(idx)}
                   className={cn(
-                    'w-full text-left px-2.5 py-2 rounded-lg text-xs transition-all leading-snug',
+                    "w-full text-left px-2.5 py-2 rounded-lg text-xs transition-all leading-snug",
                     activeTopicIdx === idx
-                      ? cn('font-medium', colorGlow[color], colorBg[color])
-                      : 'text-white/40 hover:text-white/70 hover:bg-white/5',
+                      ? cn("font-medium", colorGlow[color], colorBg[color])
+                      : "text-white/40 hover:text-white/70 hover:bg-white/5",
                   )}
                 >
                   {topic.title}
@@ -202,10 +250,10 @@ export default function ChapterView({ chapterId, onNavigate }: ChapterViewProps)
                   <button
                     onClick={() => setActiveTopicIdx(topics.length)}
                     className={cn(
-                      'w-full text-left px-2.5 py-2 rounded-lg text-xs transition-all',
+                      "w-full text-left px-2.5 py-2 rounded-lg text-xs transition-all",
                       activeTopicIdx === topics.length
-                        ? cn('font-medium', colorGlow[color], colorBg[color])
-                        : 'text-white/40 hover:text-white/70 hover:bg-white/5',
+                        ? cn("font-medium", colorGlow[color], colorBg[color])
+                        : "text-white/40 hover:text-white/70 hover:bg-white/5",
                     )}
                   >
                     Practice Questions
@@ -214,7 +262,7 @@ export default function ChapterView({ chapterId, onNavigate }: ChapterViewProps)
               )}
             </div>
 
-            {/* Topic content */}
+            {/* topic content */}
             <div className="flex-1 overflow-y-auto px-6 py-6 space-y-6">
               {activeTopicIdx < topics.length && activeTopic ? (
                 <TopicContent topic={activeTopic} color={color} />
@@ -224,7 +272,6 @@ export default function ChapterView({ chapterId, onNavigate }: ChapterViewProps)
             </div>
           </>
         ) : (
-          /* Fallback: no rich topics */
           <div className="flex-1 overflow-y-auto px-6 py-8 space-y-6">
             <div className="glass-strong border border-white/10 rounded-xl p-5">
               <div className="flex items-center gap-2 mb-3">
@@ -232,14 +279,17 @@ export default function ChapterView({ chapterId, onNavigate }: ChapterViewProps)
                 <h3 className="text-white/80 font-semibold">Study Content</h3>
               </div>
               <p className="text-white/40 text-sm leading-relaxed">
-                Use the AI Copilot to get detailed explanations for this chapter, or take the Mock Exam to test your knowledge.
+                Use the AI Copilot to get detailed explanations for this
+                chapter, or take the Mock Exam to test your knowledge.
               </p>
               <button
-                onClick={() => onNavigate('copilot')}
+                onClick={() => onNavigate("copilot")}
                 className={cn(
-                  'mt-4 text-sm px-4 py-2 rounded-lg border transition-all',
-                  colorBg[color], colorBorder[color], colorGlow[color],
-                  'hover:brightness-110',
+                  "mt-4 text-sm px-4 py-2 rounded-lg border transition-all",
+                  colorBg[color],
+                  colorBorder[color],
+                  colorGlow[color],
+                  "hover:brightness-110",
                 )}
               >
                 Ask AI Copilot →
@@ -250,16 +300,18 @@ export default function ChapterView({ chapterId, onNavigate }: ChapterViewProps)
         )}
       </div>
     </div>
-  )
+  );
 }
 
-// ── Topic content renderer ─────────────────────────────────────────────────────
+// topic content renderer
 function TopicContent({ topic, color }: { topic: any; color: string }) {
   return (
     <div className="space-y-5">
       <div>
         <h2 className="text-lg font-bold text-white mb-2">{topic.title}</h2>
-        <div className="text-white/60 text-sm leading-relaxed whitespace-pre-line">{topic.content}</div>
+        <div className="text-white/60 text-sm leading-relaxed whitespace-pre-line">
+          {topic.content}
+        </div>
       </div>
       {topic.code && (
         <div>
@@ -267,24 +319,37 @@ function TopicContent({ topic, color }: { topic: any; color: string }) {
         </div>
       )}
     </div>
-  )
+  );
 }
 
-// ── Practice questions section ─────────────────────────────────────────────────
-function PracticeQuestionsSection({ questions, color }: { questions: any[]; color: string }) {
+// practice questions section
+function PracticeQuestionsSection({
+  questions,
+  color,
+}: {
+  questions: any[];
+  color: string;
+}) {
   const colorGlow: Record<string, string> = {
-    blue: 'text-blue-400', violet: 'text-violet-400', cyan: 'text-cyan-400', green: 'text-green-400',
-  }
+    blue: "text-blue-400",
+    violet: "text-violet-400",
+    cyan: "text-cyan-400",
+    green: "text-green-400",
+  };
 
-  if (questions.length === 0) return null
+  if (questions.length === 0) return null;
 
   return (
     <div className="space-y-4">
       <div className="flex items-center gap-2">
         <Zap size={14} className={colorGlow[color]} />
-        <h3 className="text-white/70 font-semibold text-sm">Practice Questions</h3>
+        <h3 className="text-white/70 font-semibold text-sm">
+          Practice Questions
+        </h3>
         <div className="flex-1 h-px bg-white/10" />
-        <span className="text-white/30 text-xs">{questions.length} questions</span>
+        <span className="text-white/30 text-xs">
+          {questions.length} questions
+        </span>
       </div>
       <div className="space-y-3">
         {questions.map((q) => (
@@ -292,5 +357,5 @@ function PracticeQuestionsSection({ questions, color }: { questions: any[]; colo
         ))}
       </div>
     </div>
-  )
+  );
 }
