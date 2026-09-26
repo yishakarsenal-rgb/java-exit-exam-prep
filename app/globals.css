@@ -55,7 +55,6 @@
   --card-foreground: oklch(0.93 0.015 220);
   --popover: oklch(0.13 0.02 264);
   --popover-foreground: oklch(0.93 0.015 220);
-  /* neon blue primary */
   --primary: oklch(0.65 0.22 240);
   --primary-foreground: oklch(0.08 0.01 264);
   /* deep violet secondary */
