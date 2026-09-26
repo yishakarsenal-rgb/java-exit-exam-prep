@@ -61,7 +61,6 @@
   --secondary-foreground: oklch(0.8 0.08 240);
   --muted: oklch(0.16 0.02 264);
   --muted-foreground: oklch(0.55 0.05 240);
-  /* neon cyan accent */
   --accent: oklch(0.65 0.18 200);
   --accent-foreground: oklch(0.08 0.01 264);
   --destructive: oklch(0.65 0.22 25);
