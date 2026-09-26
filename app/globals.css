@@ -81,7 +81,6 @@
   --sidebar-accent-foreground: oklch(0.8 0.08 240);
   --sidebar-border: oklch(1 0 0 / 0.08);
   --sidebar-ring: oklch(0.65 0.22 240 / 0.5);
-  /* custom neon tokens */
   --neon-blue: oklch(0.65 0.22 240);
   --neon-violet: oklch(0.62 0.22 290);
   --neon-cyan: oklch(0.7 0.18 200);
