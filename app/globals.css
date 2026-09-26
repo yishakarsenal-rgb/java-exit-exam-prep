@@ -49,7 +49,6 @@
 
 :root {
   color-scheme: dark;
-  /* deep space dark background */
   --background: oklch(0.08 0.01 264);
   --foreground: oklch(0.93 0.015 220);
   /* glassmorphism cards */
