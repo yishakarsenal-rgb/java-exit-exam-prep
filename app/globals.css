@@ -158,7 +158,6 @@
   overflow-x: auto;
 }
 
-/* syntax highlighting */
 .kw {
   color: oklch(0.68 0.22 290);
 } /* keywords - violet */
