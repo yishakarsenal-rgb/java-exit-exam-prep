@@ -169,7 +169,7 @@
 }
 .cmt {
   color: oklch(0.45 0.05 240);
-} /* comments - muted blue */
+}
 .num {
   color: oklch(0.75 0.18 60);
 } /* numbers - amber */
