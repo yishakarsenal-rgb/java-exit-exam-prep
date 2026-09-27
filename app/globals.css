@@ -160,7 +160,6 @@
 
 .kw {
   color: oklch(0.68 0.22 290);
-} /* keywords - violet */
 .cls {
   color: oklch(0.72 0.18 200);
 } /* classes - cyan */
