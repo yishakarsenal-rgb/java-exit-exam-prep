@@ -166,7 +166,7 @@
 }
 .str {
   color: oklch(0.72 0.2 155);
-} /* strings - green */
+}
 .cmt {
   color: oklch(0.45 0.05 240);
 } /* comments - muted blue */
