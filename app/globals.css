@@ -101,7 +101,6 @@
   }
 }
 
-/* glassmorphism utility */
 .glass {
   background: oklch(1 0 0 / 0.04);
   backdrop-filter: blur(16px) saturate(1.4);
