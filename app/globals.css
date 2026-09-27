@@ -204,7 +204,6 @@ html {
   color: oklch(0.93 0.015 220);
 }
 
-/* animated gradient border */
 @keyframes borderGlow {
   0%,
   100% {
