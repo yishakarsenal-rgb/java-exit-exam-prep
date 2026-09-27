@@ -178,7 +178,7 @@
 }
 .ann {
   color: oklch(0.65 0.18 30);
-} /* annotations - orange */
+}
 
 /* scrollbar styling */
 ::-webkit-scrollbar {
