@@ -160,9 +160,10 @@
 
 .kw {
   color: oklch(0.68 0.22 290);
+}
 .cls {
   color: oklch(0.72 0.18 200);
-} /* classes - cyan */
+}
 .str {
   color: oklch(0.72 0.2 155);
 } /* strings - green */
