@@ -180,7 +180,6 @@
   color: oklch(0.65 0.18 30);
 }
 
-/* scrollbar styling */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
