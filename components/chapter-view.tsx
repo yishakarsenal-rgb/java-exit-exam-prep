@@ -122,7 +122,6 @@ function MiniQuestion({ question, color }: { question: any; color: string }) {
   );
 }
 
-// main chapter view
 interface ChapterViewProps {
   chapterId: string;
   onNavigate: (section: string) => void;
