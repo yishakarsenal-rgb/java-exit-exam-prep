@@ -322,7 +322,6 @@ function TopicContent({ topic, color }: { topic: any; color: string }) {
   );
 }
 
-// practice questions section
 function PracticeQuestionsSection({
   questions,
   color,
