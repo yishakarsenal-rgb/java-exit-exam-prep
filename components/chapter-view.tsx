@@ -46,7 +46,6 @@ function CodeBlock({ code, title }: { code: string; title?: string }) {
   );
 }
 
-// mini practice question card
 function MiniQuestion({ question, color }: { question: any; color: string }) {
   const [revealed, setRevealed] = useState(false);
   const [selected, setSelected] = useState<number | null>(null);
