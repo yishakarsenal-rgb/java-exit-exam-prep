@@ -189,7 +189,6 @@ export default function ChapterView({
 
   return (
     <div className="h-full flex flex-col overflow-hidden">
-      {/* chapter header */}
       <div className="px-6 pt-6 pb-4 border-b border-white/8 flex-shrink-0">
         <nav className="flex items-center gap-2 text-white/30 text-xs mb-3">
           <button
