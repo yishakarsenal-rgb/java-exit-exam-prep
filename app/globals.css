@@ -218,7 +218,6 @@ html {
   animation: borderGlow 3s ease-in-out infinite;
 }
 
-/* pulse glow animation */
 @keyframes pulseGlow {
   0%,
   100% {
