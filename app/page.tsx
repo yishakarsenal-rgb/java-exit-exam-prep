@@ -33,7 +33,6 @@ export default function Page() {
     <main className="relative flex h-screen overflow-hidden bg-background">
       <NodeCanvas />
 
-      {/* sidebar */}
       <Sidebar
         activeSection={activeSection}
         onNavigate={navigate}
