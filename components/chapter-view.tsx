@@ -224,7 +224,6 @@ export default function ChapterView({
         </div>
       </div>
 
-      {/* body */}
       <div className="flex-1 overflow-hidden flex">
         {topics.length > 0 ? (
           <>
