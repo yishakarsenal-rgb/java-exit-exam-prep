@@ -228,7 +228,6 @@ export default function ChapterView({
       <div className="flex-1 overflow-hidden flex">
         {topics.length > 0 ? (
           <>
-            {/* topic sidebar */}
             <div className="w-44 flex-shrink-0 border-r border-white/8 py-4 px-2 space-y-0.5 overflow-y-auto">
               {topics.map((topic, idx) => (
                 <button
