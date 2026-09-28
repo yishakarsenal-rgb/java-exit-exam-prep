@@ -303,7 +303,6 @@ export default function ChapterView({
   );
 }
 
-// topic content renderer
 function TopicContent({ topic, color }: { topic: any; color: string }) {
   return (
     <div className="space-y-5">
