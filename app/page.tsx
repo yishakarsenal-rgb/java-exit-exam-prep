@@ -40,7 +40,6 @@ export default function Page() {
         onToggleCollapse={() => setCollapsed((v) => !v)}
       />
 
-      {/* main content */}
       <div className="relative flex-1 overflow-hidden" style={{ zIndex: 10 }}>
         {renderMain()}
       </div>
