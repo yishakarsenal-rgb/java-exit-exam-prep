@@ -262,7 +262,6 @@ export default function ChapterView({
               )}
             </div>
 
-            {/* topic content */}
             <div className="flex-1 overflow-y-auto px-6 py-6 space-y-6">
               {activeTopicIdx < topics.length && activeTopic ? (
                 <TopicContent topic={activeTopic} color={color} />
