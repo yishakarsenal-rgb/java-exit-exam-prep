@@ -31,7 +31,6 @@ export default function Page() {
 
   return (
     <main className="relative flex h-screen overflow-hidden bg-background">
-      {/* animated node graph background */}
       <NodeCanvas />
 
       {/* sidebar */}
