@@ -522,7 +522,6 @@ function ExamRunner({
   );
 }
 
-// results screen
 function ExamResults({
   questions,
   answers,
