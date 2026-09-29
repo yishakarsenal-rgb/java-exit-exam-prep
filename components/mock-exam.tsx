@@ -488,7 +488,6 @@ function ExamRunner({
         )}
       </div>
 
-      {/* bottom nav */}
       <div className="flex-shrink-0 flex items-center gap-3 px-5 py-3 border-t border-white/8">
         <button
           onClick={() => setCurrent((c) => Math.max(0, c - 1))}
