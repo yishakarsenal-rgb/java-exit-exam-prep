@@ -647,7 +647,6 @@ function ExamResults({
         </div>
       </div>
 
-      {/* review questions */}
       <div>
         <div className="flex items-center gap-2 mb-3">
           <h2 className="text-sm font-semibold text-white/60 uppercase tracking-wider">
