@@ -600,7 +600,6 @@ function ExamResults({
         </div>
       </div>
 
-      {/* chapter breakdown */}
       <div className="mb-6">
         <h2 className="text-sm font-semibold text-white/60 uppercase tracking-wider mb-3">
           Chapter Breakdown
