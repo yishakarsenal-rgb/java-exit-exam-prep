@@ -131,7 +131,6 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
         </button>
       </div>
 
-      {/* chapter grid */}
       <div className="mb-4 flex items-center gap-2">
         <h2 className="text-white/80 font-semibold text-sm uppercase tracking-wider">
           Chapter Index
