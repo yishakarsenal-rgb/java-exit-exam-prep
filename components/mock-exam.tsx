@@ -436,7 +436,6 @@ function ExamRunner({
           </div>
         </div>
 
-        {/* overview panel */}
         {showOverview && (
           <div className="w-52 flex-shrink-0 border-l border-white/8 py-4 px-3 overflow-y-auto">
             <p className="text-xs text-white/35 uppercase tracking-wider font-semibold mb-3 px-1">
