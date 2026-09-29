@@ -175,7 +175,6 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
         ))}
       </div>
 
-      {/* footer */}
       <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-white/20 text-xs">
         <div className="flex items-center gap-2">
           <CheckCircle2 size={12} />

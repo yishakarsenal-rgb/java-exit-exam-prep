@@ -6,7 +6,6 @@ import { cn } from "@/lib/utils";
 import { BookOpen, ChevronRight, Code2, Lightbulb, Zap } from "lucide-react";
 import { useState } from "react";
 
-// syntax highlighted code block
 function CodeBlock({ code, title }: { code: string; title?: string }) {
   const highlighted = code
     .replace(
