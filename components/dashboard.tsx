@@ -104,7 +104,6 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
         ))}
       </div>
 
-      {/* quick actions */}
       <div className="grid grid-cols-1 gap-4 mb-8">
         <button
           onClick={() => onNavigate("exam")}
