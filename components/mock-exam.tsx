@@ -741,7 +741,6 @@ function ExamResults({
         </div>
       </div>
 
-      {/* actions */}
       <div className="flex gap-3 mt-6">
         <button
           onClick={onRetake}
