@@ -761,7 +761,6 @@ function ExamResults({
   );
 }
 
-// main export
 export default function MockExam({
   onNavigate,
 }: {
