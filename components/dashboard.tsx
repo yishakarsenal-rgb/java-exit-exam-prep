@@ -64,7 +64,6 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
 
   return (
     <div className="h-full overflow-y-auto px-6 py-8">
-      {/* header */}
       <div className="mb-8">
         <p className="text-xs text-blue-400/70 font-mono tracking-widest uppercase mb-2">
           AOOP EXAM PREP
