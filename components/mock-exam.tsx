@@ -51,7 +51,6 @@ const CHAPTER_COLORS: Record<
   },
 };
 
-// config screen
 function ExamConfig({
   onStart,
 }: {
