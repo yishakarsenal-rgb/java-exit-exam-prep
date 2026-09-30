@@ -81,7 +81,6 @@ function ExamConfig({
 
   return (
     <div className="h-full overflow-y-auto px-6 py-8 max-w-2xl mx-auto">
-      {/* header */}
       <div className="mb-8">
         <div className="flex items-center gap-2 mb-3">
           <BrainCircuit size={20} className="text-violet-400" />
