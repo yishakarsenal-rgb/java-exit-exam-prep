@@ -321,7 +321,6 @@ function ExamRunner({
 
   return (
     <div className="h-full flex flex-col overflow-hidden">
-      {/* top bar */}
       <div className="flex-shrink-0 flex items-center gap-4 px-5 py-3 border-b border-white/8">
         <div className="flex items-center gap-2 text-sm">
           <span className="text-white/40">Q</span>
