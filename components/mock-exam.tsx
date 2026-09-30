@@ -393,7 +393,6 @@ function ExamRunner({
             </button>
           </div>
 
-          {/* question text */}
           <p className="text-white/90 text-base leading-relaxed mb-5 font-medium">
             {q.question}
           </p>
