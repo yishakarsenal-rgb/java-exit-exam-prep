@@ -364,7 +364,6 @@ function ExamRunner({
       <div className="flex-1 overflow-hidden flex">
         {/* question area */}
         <div className="flex-1 overflow-y-auto px-6 py-6">
-          {/* question meta */}
           <div className="flex items-center gap-2 mb-4 flex-wrap">
             <span
               className={cn(
