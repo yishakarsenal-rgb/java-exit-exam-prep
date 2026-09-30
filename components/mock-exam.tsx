@@ -223,7 +223,6 @@ function ExamConfig({
         </div>
       </div>
 
-      {/* summary start */}
       <div className="glass-strong border border-violet-500/20 rounded-xl px-5 py-4 flex items-center justify-between">
         <div className="text-sm text-white/50">
           <span className="text-white/80 font-semibold">
