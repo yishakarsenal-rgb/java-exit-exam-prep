@@ -407,7 +407,6 @@ function ExamRunner({
             </div>
           )}
 
-          {/* options */}
           <div className="space-y-2.5">
             {q.options.map((opt, i) => (
               <button
