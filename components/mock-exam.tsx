@@ -398,7 +398,6 @@ function ExamRunner({
             {q.question}
           </p>
 
-          {/* code snippet */}
           {q.code && (
             <div className="code-block text-[0.78rem] mb-5 rounded-xl border border-blue-500/15">
               <pre className="font-mono leading-relaxed text-white/75">
