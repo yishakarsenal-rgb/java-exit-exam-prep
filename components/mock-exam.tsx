@@ -96,7 +96,6 @@ function ExamConfig({
         </p>
       </div>
 
-      {/* chapter selection */}
       <div className="glass border border-white/10 rounded-xl mb-4 overflow-hidden">
         <button
           onClick={() => setShowChapters((v) => !v)}
