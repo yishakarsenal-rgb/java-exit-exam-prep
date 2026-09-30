@@ -251,7 +251,6 @@ function ExamConfig({
   );
 }
 
-// running exam screen
 function ExamRunner({
   questions,
   timeLimit,
