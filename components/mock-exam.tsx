@@ -171,7 +171,6 @@ function ExamConfig({
         )}
       </div>
 
-      {/* question count */}
       <div className="glass border border-white/10 rounded-xl px-5 py-4 mb-4">
         <div className="flex items-center justify-between mb-3">
           <span className="text-white/70 text-sm font-medium">Questions</span>
