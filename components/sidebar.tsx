@@ -135,7 +135,6 @@ export default function Sidebar({
         ))}
       </nav>
 
-      {/* collapse toggle */}
       <button
         onClick={onToggleCollapse}
         className="absolute -right-3 top-20 w-6 h-6 rounded-full glass-strong border border-white/10 flex items-center justify-center text-white/40 hover:text-white/70 transition-colors"
