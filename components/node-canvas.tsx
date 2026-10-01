@@ -83,7 +83,6 @@ export default function NodeCanvas() {
         node.x += node.vx;
         node.y += node.vy;
 
-        // wrap around edges
         if (node.x < 0) node.x = canvas.width;
         if (node.x > canvas.width) node.x = 0;
         if (node.y < 0) node.y = canvas.height;
