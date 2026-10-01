@@ -59,7 +59,6 @@ export default function Sidebar({
       )}
       style={{ zIndex: 20 }}
     >
-      {/* logo */}
       <div
         className={cn(
           "flex items-center gap-3 p-4 border-b border-white/10",
