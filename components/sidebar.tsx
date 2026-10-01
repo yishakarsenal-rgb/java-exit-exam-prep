@@ -79,7 +79,6 @@ export default function Sidebar({
         )}
       </div>
 
-      {/* nav */}
       <nav className="flex-1 overflow-y-auto py-3 px-2 space-y-0.5">
         <NavBtn
           icon={<LayoutDashboard size={14} />}
