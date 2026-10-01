@@ -90,7 +90,6 @@ export default function NodeCanvas() {
         if (node.y > canvas.height) node.y = 0;
       }
 
-      // draw connections
       for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
           const dx = nodes[i].x - nodes[j].x;
