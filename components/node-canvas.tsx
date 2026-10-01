@@ -35,8 +35,6 @@ export default function NodeCanvas() {
     }
     resize();
     window.addEventListener("resize", resize);
-
-    // initialize nodes
     nodesRef.current = Array.from({ length: NODE_COUNT }, () => ({
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
