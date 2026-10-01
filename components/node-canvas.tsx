@@ -58,7 +58,6 @@ export default function NodeCanvas() {
       const nodes = nodesRef.current;
       const mouse = mouseRef.current;
 
-      // update positions
       for (const node of nodes) {
         const dx = node.x - mouse.x;
         const dy = node.y - mouse.y;
