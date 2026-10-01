@@ -73,7 +73,6 @@ export default function NodeCanvas() {
         node.vx *= 0.99;
         node.vy *= 0.99;
 
-        // clamp speed
         const speed = Math.sqrt(node.vx * node.vx + node.vy * node.vy);
         if (speed > 1.5) {
           node.vx = (node.vx / speed) * 1.5;
