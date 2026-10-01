@@ -69,7 +69,6 @@ export default function NodeCanvas() {
           node.vy += (dy / dist) * force * MOUSE_REPEL_FORCE;
         }
 
-        // velocity damping
         node.vx *= 0.99;
         node.vy *= 0.99;
 
