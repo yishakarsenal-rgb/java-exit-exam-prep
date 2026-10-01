@@ -108,7 +108,6 @@ export default function NodeCanvas() {
         }
       }
 
-      // draw nodes
       for (const node of nodes) {
         const gradient = ctx.createRadialGradient(
           node.x,
