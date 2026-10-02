@@ -849,7 +849,6 @@ export const ALL_QUESTIONS: Question[] = [
       "`paint(Graphics g)` is called whenever the applet needs to be redrawn. Use `g.drawString()`, `g.drawRect()`, `g.fillOval()` etc. Call `repaint()` to trigger a redraw.",
     code: '@Override\npublic void paint(Graphics g) {\n  g.drawString("Hello World", 50, 50);\n  g.drawRect(10, 10, 100, 50);\n}',
   },
-  // chapter 8 Servlets
   {
     id: 56,
     chapter: "servlets",
