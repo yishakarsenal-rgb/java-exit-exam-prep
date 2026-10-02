@@ -395,7 +395,6 @@ export const ALL_QUESTIONS: Question[] = [
       "`instanceof` returns `true` if the object is an instance of the specified class/interface (or a subtype). It is null-safe — `null instanceof X` returns false.",
   },
 
-  // chapter 6 Java API and Packages
   {
     id: 26,
     chapter: "ch6",
