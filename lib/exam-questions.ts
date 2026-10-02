@@ -732,7 +732,6 @@ export const ALL_QUESTIONS: Question[] = [
     code: "@FXML private Button myButton;\n@FXML private Label myLabel;",
   },
 
-  // chapter 6 Network Programming
   {
     id: 48,
     chapter: "network",
