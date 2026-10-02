@@ -659,7 +659,6 @@ export const ALL_QUESTIONS: Question[] = [
     code: "DatabaseMetaData meta = connection.getMetaData();\nSystem.out.println(meta.getDatabaseProductName());",
   },
 
-  // chapter 4 JavaFX
   {
     id: 43,
     chapter: "javafx",
