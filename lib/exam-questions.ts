@@ -311,7 +311,6 @@ export const ALL_QUESTIONS: Question[] = [
     code: 'class A { void show() { System.out.print("A"); } }\nclass B extends A { void show() { super.show(); System.out.print("B"); } }\nnew B().show();',
   },
 
-  // chapter 5 Polymorphism
   {
     id: 21,
     chapter: "ch5",
