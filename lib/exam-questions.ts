@@ -545,7 +545,6 @@ export const ALL_QUESTIONS: Question[] = [
     code: "try (Connection conn = DriverManager.getConnection(url)) {\n  // conn.close() is called automatically\n}",
   },
 
-  // chapter 5 JDBC
   {
     id: 36,
     chapter: "jdbc",
