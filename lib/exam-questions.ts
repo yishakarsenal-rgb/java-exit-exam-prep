@@ -237,7 +237,6 @@ export const ALL_QUESTIONS: Question[] = [
       "Overloaded methods share the same name but differ in the number, types, or order of their parameters. Return type alone cannot distinguish overloaded methods.",
   },
 
-  // chapter 4 Inheritance
   {
     id: 16,
     chapter: "ch4",
