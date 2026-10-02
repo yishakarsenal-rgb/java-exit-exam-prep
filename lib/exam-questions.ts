@@ -809,7 +809,6 @@ export const ALL_QUESTIONS: Question[] = [
     code: "while (true) {\n  Socket client = server.accept();\n  new Thread(() -> handleClient(client)).start();\n}",
   },
 
-  // chapter 7 Java Applets
   {
     id: 53,
     chapter: "applets",
