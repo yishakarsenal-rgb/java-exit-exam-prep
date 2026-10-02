@@ -923,7 +923,6 @@ export const ALL_QUESTIONS: Question[] = [
       "`ServletContext` is shared across the entire web application — all servlets in the same app share the same context. Use it for application-wide shared data and resources.",
   },
 
-  // additional mixed questions
   {
     id: 61,
     chapter: "ch7",
