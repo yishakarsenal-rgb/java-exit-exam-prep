@@ -472,7 +472,6 @@ export const ALL_QUESTIONS: Question[] = [
     code: "list.stream().filter(x -> x > 5).collect(Collectors.toList())",
   },
 
-  // chapter 7 Exception Handling
   {
     id: 31,
     chapter: "ch7",
