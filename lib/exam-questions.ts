@@ -152,7 +152,6 @@ export const ALL_QUESTIONS: Question[] = [
     code: 'int x = 5;\nSystem.out.println(x++ + " " + ++x);',
   },
 
-  // chapter 3 Classes and Objects
   {
     id: 11,
     chapter: "ch3",
