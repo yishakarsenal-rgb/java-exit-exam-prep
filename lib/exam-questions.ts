@@ -87,7 +87,6 @@ export const ALL_QUESTIONS: Question[] = [
       "OOP promotes reusability via inheritance, encapsulation for maintainability, and polymorphism for flexible design — key advantages over procedural approaches.",
   },
 
-  // chapter 2 Java Basics
   {
     id: 6,
     chapter: "ch2",
