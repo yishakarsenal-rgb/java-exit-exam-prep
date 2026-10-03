@@ -13,7 +13,6 @@ export interface Question {
 }
 
 export const ALL_QUESTIONS: Question[] = [
-  // chapter 1 OOP Fundamentals
   {
     id: 1,
     chapter: "ch1",
